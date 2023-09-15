@@ -1,2 +1,4 @@
 .env
+skills/GetStockPrice/__pycache__
+skills/PredictStockPrice/__pycache__
 test.py
