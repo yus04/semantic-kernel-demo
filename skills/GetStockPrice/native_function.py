@@ -1,7 +1,6 @@
 import pandas as pd
 import datetime
 import json
-from pandas import DataFrame
 from pandas_datareader.stooq import StooqDailyReader
 from semantic_kernel.skill_definition import sk_function
 from semantic_kernel import SKContext
