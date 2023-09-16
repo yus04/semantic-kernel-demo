@@ -24,14 +24,15 @@ class PredictStockPrice:
         df_today = pd.read_csv(StringIO(csv_stock_price_today))
         df_month = pd.read_csv(StringIO(csv_stock_price_month))
 
+        # ターゲットの準備
+        df_month['Price_Difference'] = df_month['Close'].shift(-1) - df_month['Close']
+
         # 欠損値を削除
+        df_today.dropna(inplace=True)
         df_month.dropna(inplace=True)
 
-        # 特徴量
+        # 特徴量とターゲットを作成
         X = df_month[['Open', 'High', 'Low', 'Volume']]
-
-        # ターゲット
-        df_month['Price_Difference'] = df_month['Close'].shift(-1) - df_month['Close']
         y = df_month['Price_Difference']
 
         # データをトレーニングセットとテストセットに分割
@@ -53,6 +54,6 @@ class PredictStockPrice:
         predicted_direction = model.predict(X_today)
 
         if predicted_direction > 0:
-            return "Stock prices may rise"
+            return "Stock prices may rise:" + csv_stock_price_month
         else:
-            return "Stock price may go down"
+            return "Stock price may go down:" + csv_stock_price_month
