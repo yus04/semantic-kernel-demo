@@ -29,8 +29,8 @@ async def create_plan(planner: BasicPlanner, kernel: sk.Kernel, use_my_prompt: b
         return await planner.create_plan_async(user_input, kernel)
 
 async def execute_plan(planer: BasicPlanner, plan: Plan, kernel: sk.Kernel) -> str:
-    response = await planer.execute_plan_async(plan, kernel)
-    return response
+    result = await planer.execute_plan_async(plan, kernel)
+    return result
 
 async def main():
     kernel = create_kernel()
@@ -50,8 +50,12 @@ async def main():
 
     planner = BasicPlanner()
     plan = await create_plan(planner, kernel, use_my_prompt, user_input, my_prompt)
-    response = await execute_plan(planner, plan, kernel)
-    print(response)
+    print('Generated Plan:')
+    print(plan.generated_plan)
+
+    result = await execute_plan(planner, plan, kernel)
+    print('result:')
+    print(result)
 
 if __name__ == "__main__":
     asyncio.run(main())
