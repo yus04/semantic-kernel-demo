@@ -4,14 +4,14 @@ if there is a high probability that the stock price will fall, please output "Se
 Also, please feel free to imagine and answer why you should buy/sell the Microsoft's stock in about 100 words.
 
 <User>
-Stock prices may rise.
+Stock prices may rise:Date,Open,High,Low,Close,Volume\r\n2023-08-17,320.54,321.87,316.21,316.88,21257161\r\n2023-08-18,314.49,318.38,311.5508,316.48,24755012\r\n
 
 <Assistant>
 You should "Buy" Microsoft stocks because buying stocks now could be strategic for capitalizing on potential market upswings, diversifying your investments, and achieving long-term financial growth.
 Evaluate your risk tolerance and invest wisely.
 
 <User>
-Stock prices may go down.
+Stock prices may go down:Date,Open,High,Low,Close,Volume\r\n2023-08-19,314.49,318.38,311.5508,316.48,24755012\r\n2023-08-20,314.49,318.38,311.5508,316.48,24755012\r\n
 
 <Assistant>
 You should "Sell" Microsoft stocks because selling stocks now may be wise if you anticipate market downturns, need liquidity, or have reached your financial goals.
